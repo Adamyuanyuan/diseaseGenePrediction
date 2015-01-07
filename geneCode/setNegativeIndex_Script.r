@@ -21,7 +21,7 @@ randowSetNegativeIndex <- function(fileName){
 	transductive_index = which(0==geneOfSvm[,1]);
 
 	#view of mouse time series data
-	geneOfSvm_train = file(paste(fileName,"_train",sep=""), "w");
+	geneOfSvm_train = file(paste(fileName,"train",sep="_"), "w");
 
 	geneRowNum = nrow(geneOfSvm);
 	for(i in 1:geneRowNum){
