@@ -24,6 +24,16 @@ rbr toppgene_rbr_train.csv toppgene_rbr_trainY.txt toppgene_rbr_all.csv toppgene
 rbr toppgene_rbr_train.csv toppgene_rbr_trainY.txt toppgene_rbr_all.csv toppgene_rbr_result_18 -r 1 -w variable.importance
 
 
+### prediction of our data
+
+rbr rbr_merged_MEH rbr_merged_label_1 rbr_merged_MEH merged_MEH_rbr_result_13 -r 1 -w
+rbr rbr_merged_MEH rbr_merged_label_1 rbr_merged_MEH merged_MEH_rbr_result_14 -r 1 -w variable.importance
+rbr rbr_merged_MEH rbr_merged_label_1 rbr_merged_MEH merged_MEH_rbr_result_15 -r 1 -w variable.importance
+rbr rbr_merged_MEH rbr_merged_label_1 rbr_merged_MEH merged_MEH_rbr_result_16 -r 1 -w variable.importance
+rbr rbr_merged_MEH rbr_merged_label_1 rbr_merged_MEH merged_MEH_rbr_result_17 -r 1 -w variable.importance
+rbr rbr_merged_MEH rbr_merged_label_1 rbr_merged_MEH merged_MEH_rbr_result_18 -r 1 -w variable.importance
+
+
 
 
 
