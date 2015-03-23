@@ -1,4 +1,4 @@
 diseaseGenePrediction
 =====================
 
-Use SVM and cosine law to predict disease gene
+Use SVM and cosine law and RBR to predict disease gene
