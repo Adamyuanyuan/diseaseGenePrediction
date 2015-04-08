@@ -47,7 +47,7 @@ analyseOfTwoGeneList <- function(geneListFile1,geneListFile2,matchedGene,topGene
 
 
 # first, you should paste all file you want to analyse to a file
-# filePath <- "E:\\gitspace\\diseaseGenePrediction\\firstLayer\\analyseOfAllGeneList";
+# filePath <- "E:\\gitspace\\diseaseGenePrediction\\firstLayer\\analyseOfAllGeneListVenn/";
 # TODO: Use library(VennDiagram) draw the Venn diagram of each geneList
 analyseOfAllGeneList <- function(filePath){
 	setwd(filePath);
@@ -58,13 +58,76 @@ analyseOfAllGeneList <- function(filePath){
 	# 此处双重for循环不好用
 	i <- 1;
 	while(i <= listLength){
+		geneListName <- paste("geneList",i,sep = "");
+		geneListName <- read.table(fileNameList[i],header=FALSE);
+		geneListName <- geneListName[1:topGeneNum,1]		
+		i <- i+1;
+	}
+
+}
+
+# first, you should paste all file you want to analyse to a file
+# filePath <- "E:\\gitspace\\diseaseGenePrediction\\firstLayer\\analyseOfAllGeneList";
+# Use library(VennDiagram) draw the Venn diagram of each geneList
+# install.packages("gregmisc")
+# library(VennDiagram)
+useVennAnalyseAllGeneList <- function(filePath){
+	setwd(filePath);
+	fileNameList <- dir();
+	listLength <- length(fileNameList);
+
+
+	geneList1 <- read.table(fileNameList[1],header=FALSE);
+	geneList2 <- read.table(fileNameList[2],header=FALSE);
+	geneList3 <- read.table(fileNameList[3],header=FALSE);
+	geneList4 <- read.table(fileNameList[4],header=FALSE);
+
+	geneList1 <- geneList1[1:1400,1];
+	geneList2 <- geneList2[1:1400,1];
+	geneList3 <- geneList3[1:1400,1];
+	geneList4 <- geneList4[1:1400,1];
+
+	matchIndex1 <- match(matchedGene,geneList1[1:topGeneNum]);
+	matchIndex1 <- na.omit(matchIndex1);
+	matchName1 <- geneList1[matchIndex1];
+
+	matchIndex2 <- match(matchedGene,geneList2[1:topGeneNum]);
+	matchIndex2 <- na.omit(matchIndex2);
+	matchName2 <- geneList2[matchIndex2];
+
+	matchIndex3 <- match(matchedGene,geneList3[1:topGeneNum]);
+	matchIndex3 <- na.omit(matchIndex3);
+	matchName3 <- geneList3[matchIndex3];
+
+	matchIndex4 <- match(matchedGene,geneList4[1:topGeneNum]);
+	matchIndex4 <- na.omit(matchIndex4);
+	matchName4 <- geneList4[matchIndex4];
+
+	T1<-venn.diagram(list(eye_subsitiue=matchName1,human_body_pro_all=matchName2,Human_body_seq_max=matchName3,mouse_proteomics=matchName4),
+		filename=NULL,lwd=1,lty=2,col=c('red','green','blue','yellow'),fill=c('red','green','blue','yellow'),cat.col=c('red','green','blue','yellow'),rotation.degree=90);
+
+	grid.draw(T1);
+
+	T2<-venn.diagram(list(eye_subsitiue=geneList1,human_body_pro_all=geneList2,Human_body_seq_max=geneList3,mouse_proteomics=geneList4),
+		filename=NULL,lwd=1,lty=2,col=c('red','green','blue','yellow'),fill=c('red','green','blue','yellow'),cat.col=c('red','green','blue','yellow'),rotation.degree=90);
+
+	grid.draw(T2);
+
+
+
+	# 此处双重for循环不好用
+	combn(listLength,3)
+	i <- 2;
+	while(i <= listLength){
+		combnResult <- combn(listLength,i);
+
 		j <- i + 1;
 		while(j <= listLength){
 
 			cat("========analyse",fileNameList[i],fileNameList[j],"\n",sep=" ");
 			outPutName <- paste("analyseResult",i,j,sep="_");
-			for(topNum in seq(100,1400,100)){
-				analyseOfTwoGeneList(fileNameList[i],fileNameList[j],gene55,topNum,outPutName);
+			for(topNum in c(100,500,1400)){
+				useVennAnalyseOfTwoGeneList(fileNameList[i],fileNameList[j],gene55,topNum,outPutName);
 			}
 			j <- j+1;
 		}
@@ -72,6 +135,7 @@ analyseOfAllGeneList <- function(filePath){
 	}
 
 }
+
 
 
 ## Use
