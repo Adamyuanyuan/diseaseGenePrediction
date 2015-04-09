@@ -1,5 +1,38 @@
 #!/bin/bash
 
+###~/newFirstLayerMerge/merge1
+rbr RBR_merged_5 rbr_lable_1 RBR_merged_5 RBR_merged_5_result_1 -r 1
+rbr RBR_merged_5 rbr_lable_1 RBR_merged_5 RBR_merged_5_result_2 -r 1 -w variable.importance
+rbr RBR_merged_5 rbr_lable_1 RBR_merged_5 RBR_merged_5_result_3 -r 1 -w variable.importance
+rbr RBR_merged_5 rbr_lable_1 RBR_merged_5 RBR_merged_5_result_4 -r 1 -w variable.importance
+rbr RBR_merged_5 rbr_lable_1 RBR_merged_5 RBR_merged_5_result_5 -r 1 -w variable.importance
+rbr RBR_merged_5 rbr_lable_1 RBR_merged_5 RBR_merged_5_result_6 -r 1 -w variable.importance
+rm variable.importance
+rbr RBR_merged_5 rbr_lable_1 RBR_merged_5 RBR_merged_5_result_7 -r 1
+rbr RBR_merged_5 rbr_lable_1 RBR_merged_5 RBR_merged_5_result_8 -r 1 -w variable.importance
+rbr RBR_merged_5 rbr_lable_1 RBR_merged_5 RBR_merged_5_result_9 -r 2 -w variable.importance
+rbr RBR_merged_5 rbr_lable_1 RBR_merged_5 RBR_merged_5_result_10 -r 3 -w variable.importance
+rbr RBR_merged_5 rbr_lable_1 RBR_merged_5 RBR_merged_5_result_11 -r 3 -w variable.importance
+rbr RBR_merged_5 rbr_lable_1 RBR_merged_5 RBR_merged_5_result_12 -r 3 -w variable.importance
+
+
+
+
+###~/mouse_time_seq
+rbr RBR_mouse_time_seq rbr_lable_1 RBR_mouse_time_seq RBR_mouse_time_seq_result_1 -r 1
+rbr RBR_mouse_time_seq rbr_lable_1 RBR_mouse_time_seq RBR_mouse_time_seq_result_2 -r 1 -w variable.importance
+rbr RBR_mouse_time_seq rbr_lable_1 RBR_mouse_time_seq RBR_mouse_time_seq_result_3 -r 1 -w variable.importance
+rbr RBR_mouse_time_seq rbr_lable_1 RBR_mouse_time_seq RBR_mouse_time_seq_result_4 -r 1 -w variable.importance
+rbr RBR_mouse_time_seq rbr_lable_1 RBR_mouse_time_seq RBR_mouse_time_seq_result_5 -r 1 -w variable.importance
+rbr RBR_mouse_time_seq rbr_lable_1 RBR_mouse_time_seq RBR_mouse_time_seq_result_6 -r 1 -w variable.importance
+rm variable.importance
+rbr RBR_mouse_time_seq rbr_lable_1 RBR_mouse_time_seq RBR_mouse_time_seq_result_7 -r 1
+rbr RBR_mouse_time_seq rbr_lable_1 RBR_mouse_time_seq RBR_mouse_time_seq_result_8 -r 1 -w variable.importance
+rbr RBR_mouse_time_seq rbr_lable_1 RBR_mouse_time_seq RBR_mouse_time_seq_result_9 -r 2 -w variable.importance
+rbr RBR_mouse_time_seq rbr_lable_1 RBR_mouse_time_seq RBR_mouse_time_seq_result_10 -r 3 -w variable.importance
+rbr RBR_mouse_time_seq rbr_lable_1 RBR_mouse_time_seq RBR_mouse_time_seq_result_11 -r 3 -w variable.importance
+rbr RBR_mouse_time_seq rbr_lable_1 RBR_mouse_time_seq RBR_mouse_time_seq_result_12 -r 3 -w variable.importance
+
 
 ###~/mouse_proteomics
 
